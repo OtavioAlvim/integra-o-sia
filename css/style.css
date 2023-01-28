@@ -1,0 +1,28 @@
+body {
+    /* background-image: linear-gradient(rgb(22, 121, 252), rgb(121, 231, 250)); */
+    /* background-image: url(../imgens/carrinho\ de\ compras.jpg); */
+    background-image: url(../imgens/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: center;
+}
+section{
+margin-left:700px;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+.flex > div {
+    flex: 1 1 200px;
+    margin: 10px;
+}

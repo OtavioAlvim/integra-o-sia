@@ -1,0 +1,91 @@
+.cupom{
+    width: 100mm;
+    /* height: 180mm; */
+    background-color: rgb(247, 189, 119);
+}
+#linha{
+    display: flex;
+    justify-content: center;
+}
+.informa{
+    /* background-color: red; */
+}
+#razao{
+    /* margin-top: -20px; */
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+
+}
+#cnpj{
+    margin-top: -20px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+#endereco{
+    margin-top: -20px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+#tel{
+    margin-top: -20px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+#linha{
+    /* background-color: red; */
+    margin-top: -20px;
+}
+h3{
+    justify-content: center;
+    display: flex;
+    margin-top: -20px;
+}
+.containner_descricao_produto{
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+}
+.containner_descricao_produto > h4{
+    padding: 7px;
+}
+
+
+
+.desc_item{
+    margin-top: 0;
+    /* background-color: yellow; */
+    margin-left: 25px;
+}
+.container_formas{
+    display: flex;
+    margin-top: -30px;
+    margin-left: 10px;
+}
+.container_formas > p {
+    /* background-color: red; */
+    margin-left: 15px;
+}
+
+#tot_item{
+    margin-top: -10px;
+}
+#valor_final{
+    margin-top: -10px;
+}
+#form_pagamento{
+    margin-top: -10px;
+}
+#volte_sem{
+    /* margin-top: -10px; */
+    margin-left: -30px;
+    display: flex;
+    justify-content: center;
+}
+.finaliza{
+    margin-left: 20px;
+}

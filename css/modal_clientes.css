@@ -1,0 +1,123 @@
+.modalsss {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.modal-contentss {
+    background-color: white;
+    padding: 16px 24px;
+    width: 1000px;
+    border-radius: 0.5rem;
+    height: 600px;
+}
+
+.close-buttonss {
+    float: right;
+    width: 24px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-buttonss:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+}
+
+#titulo_modal_clientes {
+    /* font-size: 40px; */
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.pesquisa_modal_clientes {
+    width: 900px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.testandoGridClientes {
+    margin-left: 15px;
+    color: black;
+}
+
+.titulo_cod_modal_cli {
+    width: 65px;
+}
+
+.titulo_desc_modal_cli {
+    width: 390px;
+    /* background-color: RED; */
+}
+
+.titulo_un_modal_cli {
+    width: 370px;
+    /* background-color: RED; */
+}
+
+.modal_cli_pesq {
+    display: flex;
+    font-size: 20px;
+}
+
+.resultado-emitente {
+    overflow-y: scroll;
+    margin-top: -10px;
+    margin-left: -20px;
+    width: 980px;
+    height: 400px;
+}
+
+.id_modal_cli {
+    width: 60px;
+    /* background-color: blue; */
+    color: black;
+}
+
+.desc_modal_cli {
+    width: 400px;
+    color: black;
+    /* background-color: red; */
+}
+
+.unid_modal_cli {
+    width: 350px;
+    color: black;
+    /* background-color: red; */
+}
+
+.botao_inserir_modal_cli {
+    margin-left: 30px;
+    margin-top: -10px;
+}
+
+a>button {
+    background-color: rgb(36, 137, 253);
+    border-radius: 7px;
+    border: none;
+    height: 40px;
+    width: 100px;
+}

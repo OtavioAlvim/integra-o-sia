@@ -1,0 +1,143 @@
+.modalss {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.modal-contentss {
+    background-color: white;
+    padding: 16px 24px;
+    width: 1000px;
+    border-radius: 0.5rem;
+    height: 600px;
+}
+
+.close-buttonss {
+    float: right;
+    width: 24px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-buttonss:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+}
+
+
+/* /* .ola{
+    display: none;
+} */
+
+#titulo_modal_produtos {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.pesquisa_modal_item {
+    width: 900px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.testandoGrid {
+    margin-left: 15px;
+    color: black;
+    font-size: 10px;
+    /* background-color: red; */
+}
+
+.titulo_cod_modal_prod {
+    /* background-color: RED; */
+    width: 60px;
+}
+
+.titulo_desc_modal_prod {
+    /* background-color: RED; */
+    width: 530px;
+}
+
+.titulo_un_modal_prod {
+    /* background-color: RED; */
+    width: 60px;
+}
+
+.titulo_unitario_modal_prod {
+    /* background-color: RED; */
+    margin-left: 40px;
+}
+
+.modal_prod_pesq {
+    /* background-color: RED; */
+    display: flex;
+    font-size: 20px;
+}
+
+.resultado {
+    overflow-y: scroll;
+    margin-top: -10px;
+    margin-left: -20px;
+}
+
+.id_modal_prods {
+    width: 60px;
+    /* background-color: blue; */
+    color: black;
+}
+
+.desc_modal_prods {
+    color: black;
+    width: 550px;
+}
+
+.unid_modal_prods {
+    width: 60px;
+    color: black;
+}
+
+.unit_modal_prods {
+    width: 90px;
+    color: black;
+}
+
+.resultado {
+    width: 980px;
+    height: 400px;
+}
+
+.botao_inserir_modal_prod {
+    margin-left: 30px;
+    margin-top: -10px;
+}
+
+a>button {
+    background-color: rgb(36, 137, 253);
+    border-radius: 7px;
+    border: none;
+    height: 40px;
+    width: 100px;
+}

@@ -1,0 +1,103 @@
+.cupom {
+    width: 100mm;
+    background-color: rgb(247, 189, 119);
+}
+
+#linha {
+    display: flex;
+    justify-content: center;
+}
+
+#razao {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+#cnpj {
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+}
+
+#endereco {
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+}
+
+#tel {
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+}
+
+#linha {
+    margin-top: -20px;
+}
+
+h3 {
+    justify-content: center;
+    display: flex;
+    margin-top: -20px;
+}
+
+.containner_descricao_produto {
+    margin-top: -30px;
+    display: flex;
+    margin-left: 20px;
+    /* justify-content: center; */
+}
+
+.descricao {
+    width: 90px;
+    /* background-color: red; */
+}
+
+.pdv {
+    width: 50px;
+    /* background-color: red; */
+}
+
+.inserido {
+    width: 50px;
+    /* background-color: yellow; */
+    margin-left: 10px;
+}
+
+.diferenca {
+    margin-left: 10px;
+}
+
+.containner_descricao_produto>h4 {
+    padding: 7px;
+}
+
+.containner_informacao {
+    display: flex;
+    margin-top: -25px;
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.descricao_operacao {
+    /* background-color: red; */
+    width: 100px;
+}
+
+.valor_sis {
+    /* background-color: yellow; */
+    margin-left: 10px;
+    width: 70px;
+}
+
+.valor_inserido {
+    margin-left: 10px;
+    /* background-color: red; */
+    width: 70px;
+}
+
+
+/* .diferencas{
+    margin-left: 10px;
+} */
