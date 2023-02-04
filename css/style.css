@@ -8,21 +8,24 @@ body {
     background-size: 100%;
     background-position: center;
 }
-section{
-margin-left:700px;
+
+section {
+    margin-left: 700px;
 }
-img{
+
+img {
     max-width: 100%;
     display: block;
 }
+
 .flex {
     display: flex;
     flex-wrap: wrap;
     max-width: 800px;
     margin: 0 auto;
-    
 }
-.flex > div {
+
+.flex>div {
     flex: 1 1 200px;
     margin: 10px;
 }

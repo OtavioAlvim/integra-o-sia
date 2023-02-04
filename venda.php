@@ -201,7 +201,7 @@ foreach($resultado_ultimo_troco as $val_troco => $troco){
                         </div>
                         <div id="testado" class="testado">
                             <h1>VALOR RECEBIDO</h1> 
-                            <input name="valor_recebido" type="number" id="troco">
+                            <input name="valor_recebido" type="number" step="0.01" id="troco">
                         </div>
                         <div class="testado">
                             <h1>VALOR TROCO</h1> 
