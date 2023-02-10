@@ -1,14 +1,14 @@
 
 <script>
-function ClosePrint() {
-      setTimeout(function () { window.print(); }, 500);
-      window.onfocus = function () { 
-        setTimeout(function () {
-            window.close(); 
-        }, 500); 
+// function ClosePrint() {
+//       setTimeout(function () { window.print(); }, 500);
+//       window.onfocus = function () { 
+//         setTimeout(function () {
+//             window.close(); 
+//         }, 500); 
 
-    }
-}
+//     }
+// }
 </script>
 
 <?php
@@ -47,6 +47,9 @@ foreach($resultado_consulta as $row=> $dados){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cupom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <title>cupom Pedido de Venda</title>
 </head>
 <body onload="ClosePrint()">
@@ -63,9 +66,8 @@ foreach($resultado_consulta as $row=> $dados){
         <p id="linha">--------------------------------------------------------------</p> 
             <div class="containner_descricao_produto">
                 <h4>Descrição</h4>
-                <h4>Qtda</h4>
-                <h4>Un</h4>
-                <h4>Valor unit</h4>
+                <h4>Unitario</h4>
+                <h4>quantidade</h4>
                 <h4>Total</h4>
 
             </div>
@@ -78,11 +80,11 @@ foreach($resultado_consulta as $row=> $dados){
                 $uni = $produtos['UNITARIO'];
                 $qtd = $produtos['QTD'];
                 $tot = $produtos['TOTAL'];
-                echo "<h5 class=desc_item>". $sn . " - ". $desc . "</h5>";
+                echo "<h5 class=desc_item>". $sn . " - ". substr($desc,0,18)  . "</h5>";
                 echo "<div class=container_formas>";
-                echo "<p>UNIT. R$ ". $uni . "</p>";
-                echo "<p> QTD ". $qtd . "</p>";
-                echo "<p> TOT. R$ ". $tot . "</p>";
+                echo "<p class=container_formas_unitario>R$ ". $uni . "</p>";
+                echo "<p class=container_formas_gtd>". $qtd . "</p>";
+                echo "<p class=container_formas_tot>R$". $tot . "</p>";
                 echo "</div>";
                 
             }
@@ -90,10 +92,10 @@ foreach($resultado_consulta as $row=> $dados){
             <br>
             <p id="linha">--------------------------------------------------------------</p> 
             <div class="finaliza">
-                <h4 id="valor_final">VALOR TOTAL: R$ <?php echo $total; ?></h4>
-                <h4 id="valor_final">VALOR RECEBIDO: R$ <?php echo $produtos['VALOR_RECEBIDO']; ?></h4>
-                <h4 id="valor_final">VALOR TROCO: R$ <?php echo $produtos['TROCO']; ?></h4>
-                <h5 id="form_pagamento">FORMA DE PAGAMENTO: <?php echo $forma['DESCRICAO']?></h5>
+                <h4 class="valor_final">VALOR TOTAL: R$ <?php echo $total; ?></h4>
+                <h4 class="valor_final">VALOR RECEBIDO: R$ <?php echo $produtos['VALOR_RECEBIDO']; ?></h4>
+                <h4 class="valor_final">VALOR TROCO: R$ <?php echo $produtos['TROCO']; ?></h4>
+                <h4 id="form_pagamento">FORMA DE PAGAMENTO: <?php echo $forma['DESCRICAO']?></h4>
                 <h5 id="volte_sem">VOLTE SEMPRE!</h5>
             </div>
             <p id="linha">--------------------------------------------------------------</p> 

@@ -1,91 +1,135 @@
-.cupom{
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Teko', sans-serif;
+}
+
+.cupom {
     width: 100mm;
     /* height: 180mm; */
     background-color: rgb(247, 189, 119);
 }
-#linha{
+
+#linha {
     display: flex;
     justify-content: center;
 }
-.informa{
+
+.informa {
     /* background-color: red; */
 }
-#razao{
+
+#razao {
     /* margin-top: -20px; */
     /* background-color: red; */
     display: flex;
     justify-content: center;
     font-size: 15px;
+}
 
-}
-#cnpj{
+#cnpj {
     margin-top: -20px;
     /* background-color: red; */
     display: flex;
     justify-content: center;
 }
-#endereco{
+
+#endereco {
     margin-top: -20px;
     /* background-color: red; */
     display: flex;
     justify-content: center;
 }
-#tel{
+
+#tel {
     margin-top: -20px;
     /* background-color: red; */
     display: flex;
     justify-content: center;
 }
-#linha{
+
+#linha {
     /* background-color: red; */
-    margin-top: -20px;
-}
-h3{
-    justify-content: center;
-    display: flex;
-    margin-top: -20px;
-}
-.containner_descricao_produto{
     margin-top: -30px;
+}
+
+h3 {
+    /* background-color: red; */
+    justify-content: center;
+    display: flex;
+    margin-top: -25px;
+}
+
+.containner_descricao_produto {
+    margin-top: -45px;
     display: flex;
     justify-content: center;
-}
-.containner_descricao_produto > h4{
-    padding: 7px;
+    /* background-color: red; */
 }
 
+.containner_descricao_produto>h4 {
+    /* background-color: red; */
+    padding: 5px;
+}
 
-
-.desc_item{
-    margin-top: 0;
+.desc_item {
+    padding: 2.5px;
+    width: 150px;
+    font-size: 10px;
+    margin-top: -10px;
     /* background-color: yellow; */
     margin-left: 25px;
 }
-.container_formas{
+
+.container_formas {
+    width: 200px;
+    /* background-color: red; */
+    font-size: 10px;
     display: flex;
-    margin-top: -30px;
-    margin-left: 10px;
+    margin-top: -41px;
+    margin-left: 170px;
 }
-.container_formas > p {
+
+.container_formas>p {
     /* background-color: red; */
     margin-left: 15px;
 }
 
-#tot_item{
+.container_formas_unitario {
+    width: 45px;
+}
+
+.container_formas_gtd {
+    width: 45px;
+}
+
+.container_formas_tot {
+    width: 45px;
+}
+
+#tot_item {
     margin-top: -10px;
 }
-#valor_final{
-    margin-top: -10px;
+
+.valor_final {
+    /* background-color: red; */
+    margin-top: -15px;
+    font-size: 12px;
 }
-#form_pagamento{
-    margin-top: -10px;
+
+#form_pagamento {
+    margin-top: -15px;
+    /* background-color: red; */
+    font-size: 12px;
 }
-#volte_sem{
+
+#volte_sem {
     /* margin-top: -10px; */
     margin-left: -30px;
     display: flex;
     justify-content: center;
 }
-.finaliza{
+
+.finaliza {
+    /* background-color: red; */
     margin-left: 20px;
 }

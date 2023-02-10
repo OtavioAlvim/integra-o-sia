@@ -226,7 +226,7 @@
     .pesquisa {
         display: flex;
         margin-top: -40px;
-        width: 800px;
+        width: 600px;
         /* background-color: red; */
         margin-left: -110px;
     }
@@ -376,3 +376,42 @@
     }
     /* ******************************************************************************* */
     /* ******************************************************************************* */
+    /* estilizacao modal de endereco de entregas; */
+    
+    .container_entrega {
+        /* background-color: red; */
+        font-size: 30px;
+        color: black;
+    }
+    
+    #endereco-enviar {
+        background-color: #6260DC;
+        width: 150px;
+        height: 40px;
+        border-radius: 7px;
+    }
+    
+    .dados_para_entrega {
+        display: flex;
+    }
+    
+    .dados_para_entrega>label {
+        width: 250px;
+        /* background-color: #2266e4; */
+        display: flex;
+    }
+    
+    .dados_para_entrega>input {
+        border-width: 2px;
+        width: 230px;
+        border-radius: 7px;
+    }
+    
+    .dados_para_entregas>textarea {
+        border-radius: 7px;
+        /* border-width: 2px; */
+        /* background-color: red; */
+        width: 480px;
+        height: 80px;
+        font-size: 20px;
+    }

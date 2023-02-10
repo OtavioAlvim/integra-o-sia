@@ -21,7 +21,14 @@ NOME_CLIENTE = '{$registros['FANTASIA']}',
 LIMITE  = '{$registros['LIMITE_CREDITO_ATUAL']}',
 DEBITOS = '{$result['valor_total']}',
 PORCENTAGEM_DESCONTO = '{$registros['DESCONTO_PALM']}',
-PORCENTAGEM_ACRESCIMO = '{$registros['ACRESCIMO']}'
+PORCENTAGEM_ACRESCIMO = '{$registros['ACRESCIMO']}',
+
+ENDERECO = '{$registros['ENDERECO']}',
+BAIRRO = '{$registros['BAIRRO']}',
+CIDADE = '{$registros['CIDADE']}',
+ESTADO = '{$registros['ESTADO']}',
+CEP = '{$registros['CEP']}',
+TELEFONE = '{$registros['TELEFONE']}'
 where 
 ID_PEDIDO = {$_SESSION['id_ultimo_pedido']} 
 and VENDEDOR = '{$_SESSION['usuario']}'";

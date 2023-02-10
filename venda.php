@@ -57,7 +57,7 @@ $planopgto = $db_prodd->query("SELECT ID_PLANOPGTO, DESCRICAO from PLANOSPGTO");
 $result_planopgto_sia = $planopgto->fetchAll(PDO::FETCH_ASSOC);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-$busca_cliente = $pdo->query("SELECT substr(NOME_CLIENTE,0,26) as NOME_CLIENTE,DEBITOS,LIMITE  from TMPPEDIDOS where ID_PEDIDO = {$id_ultimo_pedido}");
+$busca_cliente = $pdo->query("SELECT substr(t.NOME_CLIENTE,0,26) as NOME_CLIENTE,t.DEBITOS,t.LIMITE,t.* from TMPPEDIDOS t where t.ID_PEDIDO = {$id_ultimo_pedido}");
 $resultado_cliente = $busca_cliente->fetchAll(PDO::FETCH_ASSOC);
 foreach($resultado_cliente as $row=> $cliente){
     $cliente['NOME_CLIENTE'];
@@ -162,7 +162,7 @@ foreach($resultado_ultimo_troco as $val_troco => $troco){
     <div class="lateral_direita">
         <div class="informa">
             <div id="teste">
-                    <h1 class="nome_emitente"><?php echo $cliente['NOME_CLIENTE']?></h1>
+                    <h1 class="nome_emitente"><?php echo substr($cliente['NOME_CLIENTE'],0,26)?></h1>
                     <div id="saldo_emitente">
                         <h2 class="saldo">CREDITO: R$ <?php echo $cli_cred?></h2>
                         <h2>DEBITO: R$ <?php echo $cli_deb?></h2>
@@ -230,9 +230,8 @@ foreach($resultado_ultimo_troco as $val_troco => $troco){
             </div>
         </div>
 
-<!-- ///////////////////////////////Modal menu///////////////////////////////// -->
 
-    <!-- <button accesskey="M">Menu</button> -->
+
 
 <!-- //////////////////////formulario de pesquisa de itens/////////////////////////// -->
         <form class="pesq_itens" action="processamento/insere_item.php" method="POST">
@@ -244,7 +243,52 @@ foreach($resultado_ultimo_troco as $val_troco => $troco){
             </div>
         </form>
             <div class="total">
+
+
+
+<!-- Modal para inserir dados de entrega -->
+
+
+<a href="#" onclick="abreModalEntrega()">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+  <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+</svg></a>
+            <div class="modal" id="modal_endereco">
+                <div class="modal-content">
+                    <span class="close-button" onclick="fechaModalEntrega()">
+                        &times;
+                    </span>
+                    <div class="container_entrega">
+                        <h3 id="titulo_exclui_item">Insira os dados para entrega</h3><hr>
+                        <form action="./processamento/insere_frete.php" method="post">
+                            <div class="dados_para_entrega">
+                                <label class="entrega_dados" for="exampleFormControlInput1">Pedido:</label>
+                                <input type="number" id="frete" name="id_pedido" value="<?php echo $id_ultimo_pedido; ?>" required><br>
+                            </div>
+                            <div class="dados_para_entrega">
+                                <label class="entrega_dados" for="exampleFormControlInput1">Custo da entrega:</label>
+                                <input type="number" name="custo_entrega" step="0.01" ><br>
+                            </div>
+                            <div class="dados_para_entrega">
+                                <label class="entrega_dados" for="exampleFormControlInput1" class="form-label">Nome do cliente:</label>
+                                <input type="text" class="form-control" name="nome_cliente" id="exampleFormControlInput1" value="<?php echo $cliente['NOME_CLIENTE']?>" required><br>
+                            </div>
+                            <div class="dados_para_entregas">
+                                <label class="entrega_dados" for="exampleFormControlTextarea1" class="form-label">Endereço:</label><br>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="endereco_entrega"  required><?php echo $cliente['ENDERECO'] . ", BAIRRO :" . $cliente['BAIRRO'] ?></textarea><br>
+                            </div>
+                                    
+                                    <button type="submit" id="endereco-enviar">Inserir Endereço</button>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+
+
 <!-- /////////////////////////////modal para inserir produto//////////////////////////// -->
+
             <a href="#" onclick="abreModalProduto()" accesskey="P">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
   <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
@@ -513,6 +557,99 @@ Swal.fire({
  <?php
 endif;
 unset($_SESSION['forma_pag']);
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- modals destinados a entregas -->
+<!-- DadosInseridosComSucesso -->
+
+<?php
+if(isset($_SESSION['DadosInseridosComSucesso'])):
+?>
+
+<script>
+Swal.fire({
+  icon: 'success',
+  title: 'Endereço de entrega inserido com sucesso!',
+  showConfirmButton: false,
+  timer: 1500
+})
+</script>
+ <?php
+endif;
+unset($_SESSION['DadosInseridosComSucesso']);
+?>
+
+
+
+
+<!-- ERRO nao_existe_pedido_com_esse_id -->
+<?php
+if(isset($_SESSION['nao_existe_pedido_com_esse_id'])):
+?>
+
+<script>
+Swal.fire({
+  icon: 'error',
+  title: 'ERRO...',
+  text: 'Não existe Pedidos com esse ID',
+//   footer: '<a href="">Why do I have this issue?</a>'
+})
+</script>
+ <?php
+endif;
+unset($_SESSION['nao_existe_pedido_com_esse_id']);
+?>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- ERRO ja_existe_pedido_entrega -->
+<?php
+if(isset($_SESSION['ja_existe_pedido_entrega'])):
+?>
+
+<script>
+Swal.fire({
+  icon: 'error',
+  title: 'ERRO...',
+  text: 'Ja existe um pedido de entrega para esse ID!',
+//   footer: '<a href="">Why do I have this issue?</a>'
+})
+</script>
+ <?php
+endif;
+unset($_SESSION['ja_existe_pedido_entrega']);
+?>
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- Dados Inseridos Com Sucesso Necesario Cobrar taxa-->
+
+<?php
+if(isset($_SESSION['DadosInseridosComSucessoNecesarioCobrar'])):
+?>
+
+<script>
+Swal.fire({
+  icon: 'success',
+  title: 'Entrega inserido com sucesso! Valor cobrado separadamente!',
+  showConfirmButton: false,
+  timer: 2500
+})
+</script>
+ <?php
+endif;
+unset($_SESSION['DadosInseridosComSucessoNecesarioCobrar']);
 ?>
 
 </body>

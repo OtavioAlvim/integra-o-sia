@@ -37,14 +37,14 @@ document.addEventListener("keyup", function(e) {
 
 //keydown
 document.addEventListener("keydown", function(event) {
-    if (event.key === "F9") {
+    if (event.key === "Delete") {
         var element = document.getElementById("modals");
         element.classList.add("show-modal");
     }
 });
 //keydown
 document.addEventListener("keyup", function(e) {
-    if (e.key === "F9") {
+    if (e.key === "Delete") {
         var element = document.getElementById("modals");
         element.classList.add("show-modal");
         document.getElementById("id_produto").focus();
@@ -132,7 +132,38 @@ document.addEventListener("keyup", function(e) {
 });
 
 
+///////////////////////modal para aparecer dados de frete na frente de pedidos//////////////////////////
 
+//keydown
+document.addEventListener("keydown", function(event) {
+    if (event.key === "F9") {
+        var element = document.getElementById("modal_endereco");
+        element.classList.add("show-modal");
+    }
+});
+//keydown
+document.addEventListener("keyup", function(e) {
+    if (e.key === "F9") {
+        var element = document.getElementById("modal_endereco");
+        element.classList.add("show-modal");
+        document.getElementById("frete").focus();
+    }
+});
+
+//keydown
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        var element = document.getElementById("modal_endereco");
+        element.classList.remove("show-modal");
+    }
+});
+//keydown
+document.addEventListener("keyup", function(e) {
+    if (e.key === "Escape") {
+        var element = document.getElementById("modal_endereco");
+        element.classList.remove("show-modal");
+    }
+});
 
 
 
@@ -186,5 +217,17 @@ function abreModalClientes() {
 
 function fechaModalClientes() {
     var element = document.getElementById("modalsss");
+    element.classList.remove("show-modal");
+}
+
+// Evento para abrir modal de entrega
+
+function abreModalEntrega() {
+    var element = document.getElementById("modal_endereco");
+    element.classList.add("show-modal");
+}
+
+function fechaModalEntrega() {
+    var element = document.getElementById("modal_endereco");
     element.classList.remove("show-modal");
 }
