@@ -110,7 +110,7 @@ foreach($result_query as $row=> $teste){
                   'N', 
                   '{$registro['RAZAO']}', 
                   '{$registro['ID_EMPRESA']}',
-                  '0.0', 
+                  '{$registro['FRETE']}', 
                   '0.0', 
                   '0.0',  
                   '', 

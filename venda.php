@@ -508,6 +508,8 @@ unset($_SESSION['exclui']);
 
 <?php
 if(isset($_SESSION['venda_finalizada_com_sucesso'])):
+
+    
 ?>
 
 <script>
@@ -521,6 +523,7 @@ Swal.fire({
  <?php
 endif;
 unset($_SESSION['venda_finalizada_com_sucesso']);
+
 ?>
 
 <!-- ERRO AO FINALIZAR FINALIZAÇÃO, POIS NÃO EXISTE ITENS NA GRID -->
