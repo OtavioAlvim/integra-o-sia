@@ -12,6 +12,7 @@
 </script>
 
 <?php
+include('../DB/conexao.php');
 include('../login/verifica_login.php');
 // header('Location: index.php');
 $n = $_SESSION['id_ultimo_pedido'];
@@ -19,7 +20,7 @@ $n = $_SESSION['id_ultimo_pedido'];
 $db = new PDO('sqlite:../DB/'.$_SESSION['cnpj'].'/DB-SISTEMA/'.$_SESSION['ID'].'');
 $db_prodd = new PDO('sqlite:../DB/'.$_SESSION['cnpj'].'/DB-SIA/sia');
 // ***************************sql para buscar os dados para a geração dos itens do cupom***************************
-$consulta_sqlite = $db->query("SELECT t.total as total_nota,t.ID_FORMAPGTO,t.VALOR_RECEBIDO,t.TROCO, ped.* from TMPPEDIDOS t join TMPITENS_PEDIDO ped on t.ID_PEDIDO = ped.ID_PEDIDO where ped.ID_PEDIDO = {$n}");
+$consulta_sqlite = $db->query("SELECT t.total as total_nota,t.ID_FORMAPGTO,t.VALOR_RECEBIDO,t.TROCO,t.ENTREGAR, ped.* from TMPPEDIDOS t join TMPITENS_PEDIDO ped on t.ID_PEDIDO = ped.ID_PEDIDO where ped.ID_PEDIDO = {$n}");
 $produto = $consulta_sqlite->fetchAll(PDO::FETCH_ASSOC);
 foreach($produto as $row => $produtos){
     $total = $produtos['total_nota'];
@@ -97,6 +98,17 @@ foreach($resultado_consulta as $row=> $dados){
                 <h4 class="valor_final">VALOR RECEBIDO: R$ <?php echo $produtos['VALOR_RECEBIDO']; ?></h4>
                 <h4 class="valor_final">VALOR TROCO: R$ <?php echo $produtos['TROCO']; ?></h4>
                 <h4 id="form_pagamento">FORMA DE PAGAMENTO: <?php echo $forma['DESCRICAO']?></h4>
+                <?php
+                if($produtos['ENTREGAR'] == 'S'){
+                    $insere_endereco = $conn->query("SELECT * FROM entregas e where e.cnpj = '{$_SESSION['cnpj']}' and e.numero_pedido = '{$n}'");
+                    $resultado_endereco = $insere_endereco->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($resultado_endereco as $end => $endereco_entrega){
+
+                    }
+                    ?>
+                    <h4 class="valor_final">ENDEREÇO DE ENTREGA: <p> <?php echo $endereco_entrega['endereco'] ?> </p></h4>
+                <?php } 
+                ?>
                 <h5 id="volte_sem">VOLTE SEMPRE!</h5>
             </div>
             <p id="linha">--------------------------------------------------------------</p> 

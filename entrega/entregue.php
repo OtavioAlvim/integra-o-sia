@@ -68,7 +68,7 @@ $resultado_entrega = $entregas->fetchAll(PDO::FETCH_ASSOC);
             foreach($resultado_entrega as $linhas=> $entrega){?>
                 <div class="col">
                     <div class="card">
-                        <img src="../images/imagem_entregas/1.png" class="card-img-top" alt="...">
+                        <img src="../images/imagem_entregas/pedidos_entregue.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" >Pedido n <?php echo $entrega['numero_pedido'] ?></h5>
                             <p class="card-title"><strong><?php echo $entrega['nomes'] ?></strong> </p>

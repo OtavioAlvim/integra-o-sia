@@ -114,12 +114,15 @@ h3 {
     /* background-color: red; */
     margin-top: -15px;
     font-size: 12px;
+    width: 330px;
+    margin-left: 5px;
 }
 
 #form_pagamento {
     margin-top: -15px;
     /* background-color: red; */
     font-size: 12px;
+    margin-left: 5px;
 }
 
 #volte_sem {
