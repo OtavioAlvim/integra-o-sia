@@ -66,11 +66,11 @@ foreach($resultado_consulta as $row=> $dados){
         <p id="linha">--------------------------------------------------------------</p> 
         <h3>Pedido de venda - <?php echo $produtos['ID_PEDIDO']?></h3>
         <p id="linha">--------------------------------------------------------------</p> 
-            <div class="containner_descricao_produto">
-                <h4>Descrição</h4>
-                <h4>Unitario</h4>
-                <h4>quantidade</h4>
-                <h4>Total</h4>
+        <div class="containner_descricao_produto">
+                <h5 class="container_formas_descricao">DESCRICAO</h5>
+                <h5 class="container_formas_unitarios">UN</h5>
+                <h5 class="container_formas_quantidade">QTD</h5>
+                <h5 class="container_formas_total">TOTAL</h5>
 
             </div>
         <p id="linha">--------------------------------------------------------------</p>  

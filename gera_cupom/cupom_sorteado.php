@@ -65,10 +65,10 @@ foreach($resultado_consulta as $row=> $dados){
         <h3>Pedido de venda - <?php echo $produtos['ID_PEDIDO']?></h3>
         <p id="linha">--------------------------------------------------------------</p> 
             <div class="containner_descricao_produto">
-                <h4>Descrição</h4>
-                <h4>Unitario</h4>
-                <h4>quantidade</h4>
-                <h4>Total</h4>
+                <h5 class="container_formas_descricao">DESCRICAO</h5>
+                <h5 class="container_formas_unitarios">UN</h5>
+                <h5 class="container_formas_quantidade">QTD</h5>
+                <h5 class="container_formas_total">TOTAL</h5>
 
             </div>
         <p id="linha">--------------------------------------------------------------</p>  
@@ -82,9 +82,9 @@ foreach($resultado_consulta as $row=> $dados){
                 $tot = $produtos['TOTAL'];
                 echo "<h5 class=desc_item>". $sn . " - ". substr($desc,0,18)  . "</h5>";
                 echo "<div class=container_formas>";
-                echo "<p class=container_formas_unitario>R$ ". $uni . "</p>";
-                echo "<p class=container_formas_gtd>". $qtd . "</p>";
-                echo "<p class=container_formas_tot>R$". $tot . "</p>";
+                echo "<p class=container_formas_unitario>R$ ". number_format($uni,2,',',' ') . "</p>";
+                echo "<p class=container_formas_gtd>". number_format($qtd,2,',',' ') . "</p>";
+                echo "<p class=container_formas_tot>R$". number_format($tot,2,',',' ') . "</p>";
                 echo "</div>";
                 
             }
@@ -92,9 +92,9 @@ foreach($resultado_consulta as $row=> $dados){
             <br>
             <p id="linha">--------------------------------------------------------------</p> 
             <div class="finaliza">
-                <h4 class="valor_final">VALOR TOTAL: R$ <?php echo $total; ?></h4>
-                <h4 class="valor_final">VALOR RECEBIDO: R$ <?php echo $produtos['VALOR_RECEBIDO']; ?></h4>
-                <h4 class="valor_final">VALOR TROCO: R$ <?php echo $produtos['TROCO']; ?></h4>
+                <h4 class="valor_final">VALOR TOTAL: R$ <?php echo number_format($total,2,',',' '); ?></h4>
+                <h4 class="valor_final">VALOR RECEBIDO: R$ <?php echo number_format($produtos['VALOR_RECEBIDO'],2,',',' ') ; ?></h4>
+                <h4 class="valor_final">VALOR TROCO: R$ <?php echo number_format($produtos['TROCO'],2,',',' ') ; ?></h4>
                 <h4 id="form_pagamento">FORMA DE PAGAMENTO: <?php echo $forma['DESCRICAO']?></h4>
                 <?php
                 if($produtos['ENTREGAR'] == 'S'){

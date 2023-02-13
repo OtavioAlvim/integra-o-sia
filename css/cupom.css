@@ -24,6 +24,7 @@ body {
     display: flex;
     justify-content: center;
     font-size: 15px;
+    /* font-size: 7px; */
 }
 
 #cnpj {
@@ -38,6 +39,7 @@ body {
     /* background-color: red; */
     display: flex;
     justify-content: center;
+    font-size: 13px;
 }
 
 #tel {
@@ -60,15 +62,34 @@ h3 {
 }
 
 .containner_descricao_produto {
+    margin-left: 30px;
     margin-top: -45px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     /* background-color: red; */
 }
 
 .containner_descricao_produto>h4 {
     /* background-color: red; */
     padding: 5px;
+}
+.container_formas_descricao{
+    padding-left: 40px;
+    /* background-color: red; */
+    width: 115px;
+}
+.container_formas_unitarios{
+    width: 40px;
+    margin-left: 12px;
+    /* background-color: brown; */
+}
+.container_formas_quantidade{
+    margin-left: 10px;
+}
+.container_formas_total{
+    margin-left: 30px;
+    /* background-color: brown; */
+    
 }
 
 .desc_item {
@@ -78,6 +99,7 @@ h3 {
     margin-top: -10px;
     /* background-color: yellow; */
     margin-left: 25px;
+    font-weight: 800;
 }
 
 .container_formas {
@@ -85,29 +107,38 @@ h3 {
     /* background-color: red; */
     font-size: 10px;
     display: flex;
-    margin-top: -41px;
+    margin-top: -44px;
     margin-left: 170px;
 }
 
 .container_formas>p {
+    /* margin-top: 1px; */
     /* background-color: red; */
     margin-left: 15px;
+    font-weight: 800;
 }
 
 .container_formas_unitario {
     width: 45px;
+    font-weight: 800;
 }
 
 .container_formas_gtd {
     width: 45px;
+    font-weight: 800;
 }
 
 .container_formas_tot {
+    /* background-color: brown; */
     width: 45px;
 }
 
+
+
+
+
 #tot_item {
-    margin-top: -10px;
+    margin-top: -8px;
 }
 
 .valor_final {

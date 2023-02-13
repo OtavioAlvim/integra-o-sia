@@ -136,14 +136,14 @@ document.addEventListener("keyup", function(e) {
 
 //keydown
 document.addEventListener("keydown", function(event) {
-    if (event.key === "F9") {
+    if (event.key === "Insert") {
         var element = document.getElementById("modal_endereco");
         element.classList.add("show-modal");
     }
 });
 //keydown
 document.addEventListener("keyup", function(e) {
-    if (e.key === "F9") {
+    if (e.key === "Insert") {
         var element = document.getElementById("modal_endereco");
         element.classList.add("show-modal");
         document.getElementById("frete").focus();
